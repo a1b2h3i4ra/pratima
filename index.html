@@ -3,300 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official Website of Pratima Kumari Das, MLA Raja Pakar (SC), Bihar">
-    <title>Pratima Kumari Das - MLA Raja Pakar (SC), Bihar</title>
+    <meta name="description" content="Official Website of Pratima Kumari Das, MLA Raja Pakar, Bihar">
+    <title>Pratima Kumari Das - MLA Raja Pakar , Bihar</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
         :root {
-            --primary: #0F4C81;
-            --secondary: #E43F5A;
-            --transition: all 0.3s ease;
+            --primary-color: #0F4C81;
+            --secondary-color: #E43F5A;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --transition-speed: all 0.3s ease-in-out;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
             overflow-x: hidden;
-            line-height: 1.6;
         }
-        
-        /* Navigation */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .nav-links a {
-                padding: 0.75rem 1.5rem;
-                width: 100%;
-                text-align: center;
-            }
-        }
-        
-        /* Hero Section */
+
+        body:not(.loaded) * { transition: none !important; }
+
+        /* Hero Banner */
         .hero-banner {
             background-image: url('https://scontent.fpat4-1.fna.fbcdn.net/v/t39.30808-6/525197244_4000019080251390_3599947607587194700_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8NfyfzdpACcQ7kNvwHbseH5&_nc_oc=AdlFuhpGHDIP_9XrYUnR4mRFe7a1DxZIxe77ggJVqPD2tdA9gYPFe8l4vDHvNizpBrs&_nc_zt=23&_nc_ht=scontent.fpat4-1.fna&_nc_gid=Wv93ywsHjV9qJ4WxdSwUYA&oh=00_Afai07F3OXzSeTHLiCMTFc2dKl8dcw-m5kHX5YKJkAbk8A&oe=68BDFC13');
             background-size: cover;
-            background-position: center 35%;
-            height: 100vh;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 90vh;
+            min-height: 600px;
             position: relative;
-            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
         }
         .hero-banner::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
         }
         .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
+            position: relative; z-index: 2;
+            padding: 2rem 4rem;
+            display: flex; align-items: center; gap: 1.5rem;
+            animation: slideInUp 1s ease-out;
         }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-profile-img {
+            width: 150px; height: 150px;
+            border-radius: 50%; border: 4px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            object-fit: cover;
+            transition: var(--transition-speed);
         }
-        
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 0.6s forwards;
+        .hero-profile-img:hover { transform: scale(1.05); }
+        .hero-text h1 { text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        .hero-text p { text-shadow: 1px 1px 2px rgba(0,0,0,0.4); }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        /* Profile Image */
-        .profile-img {
-            border: 4px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Sections */
+
         section {
-            padding: 5rem 0;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
+        section.visible { opacity: 1; transform: translateY(0); }
+
         .section-title {
             position: relative;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-            display: inline-block;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2.5rem;
         }
-        
-        .section-title:after {
+        .section-title::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            transition: width 0.3s ease;
+            position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 50px; height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+            transition: width 0.4s ease;
         }
-        
-        .section-title:hover:after {
-            width: 100px;
-        }
-        
-        /* Cards */
+        .section-title:hover::after { width: 90px; }
+
         .card {
             background: white;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            overflow: hidden;
-            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03),
+                        0 2px 4px -2px rgba(0,0,0,0.03);
+            transition: var(--transition-speed);
         }
-        
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07),
+                        0 4px 6px -4px rgba(0,0,0,0.07);
         }
-        
-        /* Video Wrapper */
+
+        /* Responsive nav */
+        .nav-links { transition: max-height 0.4s ease-in-out; }
+        @media (max-width: 768px) {
+            .hero-content { flex-direction: column; text-align: center; padding: 2rem 1rem; }
+            .hero-profile-img { width: 120px; height: 120px; }
+            .section-title::after { left: 0; transform: translateX(0); }
+            .section-title.text-center::after { left: 50%; transform: translateX(-50%); }
+            .nav-links {
+                display: none; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: white;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a {
+                padding: 1rem; text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+        }
+
+        /* ✅ Fix for Latest Media */
         .video-wrapper {
             position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
             overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        
-        .video-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
         .video-wrapper iframe {
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
             border: none;
-            aspect-ratio: 16/9;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .hero-banner {
-                background-position: center;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-banner {
-                height: 80vh;
-                min-height: 400px;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            section {
-                padding: 3rem 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-banner {
-                height: 70vh;
-                min-height: 350px;
-            }
-            
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .section-title {
-                font-size: 1.75rem;
-            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+<body class="text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-3">
-                <div class="flex items-center">
+                <a href="#" class="flex items-center">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Indian_National_Congress_hand_logo.svg/250px-Indian_National_Congress_hand_logo.svg.png" 
                          alt="INC Logo"
                          class="h-12 w-auto">
-                </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
+                </a>
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
                 </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-300">About</a>
-                    <a href="#career" class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Career</a>
-                    <a href="#media" class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Media</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Contact</a>
+                <div class="hidden md:flex items-center space-x-8 nav-links" id="navLinks">
+                    <a href="#about" class="text-gray-600 hover:text-blue-700 font-medium">About</a>
+                    <a href="#career" class="text-gray-600 hover:text-blue-700 font-medium">Career</a>
+                    <a href="#media" class="text-gray-600 hover:text-blue-700 font-medium">Media</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-700 font-medium">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
+    
+    <!-- Hero -->
     <header class="hero-banner">
         <div class="hero-content">
-            <div class="mb-6 transform hover:scale-105 transition-transform duration-300">
-                <img src="https://scontent.fpat4-1.fna.fbcdn.net/v/t39.30808-6/525197244_4000019080251390_3599947607587194700_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8NfyfzdpACcQ7kNvwHbseH5&_nc_oc=AdlFuhpGHDIP_9XrYUnR4mRFe7a1DxZIxe77ggJVqPD2tdA9gYPFe8l4vDHvNizpBrs&_nc_zt=23&_nc_ht=scontent.fpat4-1.fna&_nc_gid=-fdjoTEgMIJGnBLn5hSdhg&oh=00_AfY23AhAIKTMZpJ2nKL-U-shfqkbR7KbCZZomn08oVfvRQ&oe=68BDC3D3" 
-                     alt="Pratima Kumari Das"
-                     class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover profile-img">
-            </div>
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-3 leading-tight">Pratima Kumari Das</h1>
-            <p class="text-lg md:text-xl text-white opacity-90 mb-6">Member of Legislative Assembly</p>
-            <p class="text-white text-lg">Raja Pakar (SC), Bihar</p>
-            <div class="mt-8">
-                <a href="#about" class="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Learn More
-                </a>
+            <img src="https://scontent.fpat4-1.fna.fbcdn.net/v/t39.30808-6/525197244_4000019080251390_3599947607587194700_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8NfyfzdpACcQ7kNvwHbseH5&_nc_oc=AdlFuhpGHDIP_9XrYUnR4mRFe7a1DxZIxe77ggJVqPD2tdA9gYPFe8l4vDHvNizpBrs&_nc_zt=23&_nc_ht=scontent.fpat4-1.fna&_nc_gid=Wv93ywsHjV9qJ4WxdSwUYA&oh=00_Afai07F3OXzSeTHLiCMTFc2dKl8dcw-m5kHX5YKJkAbk8A&oe=68BDFC13" 
+                 alt="Pratima Kumari Das" 
+                 class="hero-profile-img">
+            <div class="hero-text">
+                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">Pratima Kumari Das</h1>
+                <p class="text-xl md:text-2xl text-gray-200 mt-2">Member of Legislative Assembly, Raja Pakar</p>
             </div>
         </div>
     </header>
-</body>
-</html>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 md:px-6 py-16">
-        <!-- About Section -->
-        <section id="about" class="mb-16 scroll-mt-24">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title">About</h2>
+    <!-- Main -->
+    <main class="max-w-7xl mx-auto px-4 md:px-6 py-12">
+        <!-- About -->
+        <section id="about" class="scroll-mt-24 py-16">
+            <h2 class="text-4xl font-bold section-title text-center">About Me</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="card p-6 md:p-8">
-                    <h3 class="text-2xl font-semibold mb-4">Biography</h3>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">Biography</h3>
                     <p class="text-gray-600 leading-relaxed">
                         Pratima Kumari Das, born September 13, 1975 in Kumhrar, Bihar, is a prominent Indian politician and advocate. 
                         With academic credentials including a B.Sc from B.R.A.U. Gaya and L.L.B from Magadh University, she combines 
                         legal expertise with political leadership to effectively serve her constituency.
                     </p>
                 </div>
-                <div class="card p-6 md:p-8">
-                    <h3 class="text-2xl font-semibold mb-4">Political Vision</h3>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">Political Vision</h3>
                     <p class="text-gray-600 leading-relaxed">
                         Championing inclusive governance, she advocates for progressive policies focused on education reform, 
                         healthcare accessibility, and women's empowerment. Her vision emphasizes community-driven development 
@@ -306,215 +204,128 @@
             </div>
         </section>
 
-        <!-- Political Career Section -->
-        <section id="career" class="mb-16 scroll-mt-24 py-12 bg-gray-50 rounded-2xl">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title">Political Journey</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-4xl text-blue-600 mb-4">54,299</div>
-                    <div class="font-medium">2020 Election Votes</div>
+        <!-- Career -->
+        <section id="career" class="scroll-mt-24 py-16 bg-white rounded-2xl">
+            <h2 class="text-4xl font-bold section-title text-center">Political Journey</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">54,299</div>
+                    <div class="font-medium text-gray-500">2020 Election Votes</div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-4xl text-blue-600 mb-4">1,796</div>
-                    <div class="font-medium">Victory Margin</div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">1,796</div>
+                    <div class="font-medium text-gray-500">Victory Margin</div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-4xl text-blue-600 mb-4">243</div>
-                    <div class="font-medium">Seats Advocated</div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">243</div>
+                    <div class="font-medium text-gray-500">Seats Advocated</div>
                 </div>
             </div>
         </section>
-
-        <!-- Media Section -->
+        
+        <!-- ✅ Latest Media -->
         <section id="media" class="mb-16 scroll-mt-24">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-3 section-title inline-block">Latest Media</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Watch the latest videos and updates from Pratima Kumari Das</p>
             </div>
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title">Latest Media</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="video-wrapper">
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1620071148646730" 
-                            class="w-full h-full"
-                            allowfullscreen></iframe>
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1620071148646730" allowfullscreen></iframe>
                 </div>
                 <div class="video-wrapper">
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1746598636277439" 
-                            class="w-full h-full"
-                            allowfullscreen></iframe>
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1746598636277439" allowfullscreen></iframe>
                 </div>
                 <div class="video-wrapper">
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1351871762928031" 
-                            class="w-full h-full"
-                            allowfullscreen></iframe>
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1351871762928031" allowfullscreen></iframe>
                 </div>
                 <div class="video-wrapper">
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1798562500714358" 
-                            class="w-full h-full"
-                            allowfullscreen></iframe>
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1798562500714358" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="scroll-mt-24 bg-gradient-to-r from-blue-50 to-gray-50 py-16 rounded-2xl">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title">Connect With Us</h2>
-            <div class="bg-white rounded-2xl shadow-xl p-8 text-center">
-                <div class="flex justify-center space-x-6 mb-8">
-                    <a href="https://www.facebook.com/pratimaK.inc/videos" target="_blank" class="text-blue-600 hover:text-blue-800 text-3xl">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/pratimak_inc/" target="_blank" class="text-pink-600 hover:text-pink-800 text-3xl">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://x.com/pratimak_inc" target="_blank" class="text-black hover:text-gray-800 text-3xl">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+        
+        <!-- Contact -->
+        <section id="contact" class="scroll-mt-24 py-16">
+            <h2 class="text-4xl font-bold section-title text-center">Connect With Us</h2>
+            <div class="card p-8 md:p-12 text-center max-w-3xl mx-auto">
+                <div class="flex justify-center space-x-8 mb-6">
+                    <a href="https://www.facebook.com/pratimaK.inc/videos" target="_blank" class="text-blue-600 hover:text-blue-800 text-4xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/pratimak_inc/" target="_blank" class="text-pink-600 hover:text-pink-800 text-4xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/pratimak_inc" target="_blank" class="text-black hover:text-gray-800 text-4xl"><i class="fab fa-twitter"></i></a>
                 </div>
-                <div class="space-y-2 text-gray-600">
-                    <p>Office Address: Bihar Legislative Assembly, Patna</p>
-                    <p>Email: inc@pratimakumaridas.online</p>
-               
+                <div class="space-y-3 text-gray-600">
+                    <p><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>Office Address: Bihar Legislative Assembly, Patna</p>
+                    <p><i class="fas fa-envelope mr-2 text-blue-600"></i>Email: inc@pratimakumaridas.online</p>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 invisible transform translate-y-4">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-800 text-white py-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <a href="#" class="inline-block mb-6">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Indian_National_Congress_hand_logo.svg/250px-Indian_National_Congress_hand_logo.svg.png" 
-                     alt="INC Logo"
-                     class="h-16 w-auto mx-auto hover:scale-105 transition-transform duration-300">
-            </a>
-            <p class="mb-4">&copy; 2023 Pratima Kumari Das. All rights reserved.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
-                <a href="#" class="text-gray-300 hover:text-white">Terms of Service</a>
-                <a href="#" class="text-gray-300 hover:text-white">Accessibility</a>
-            </div>
+            <p>&copy; 2025 Pratima Kumari Das. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with ❤️ for the people of Raja Pakar.</p>
         </div>
     </footer>
-
-    <!-- JavaScript for animations and interactivity -->
+    
+    <!-- Scroll to top -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all opacity-0 transform translate-y-4">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        if (mobileMenuBtn && navLinks) {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const menuIcon = mobileMenuBtn.querySelector('i');
+            
             mobileMenuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
             });
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    if (navLinks && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if (targetElement) {
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            menuIcon.classList.replace('fa-times', 'fa-bars');
+                        }
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
                     }
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Adjust for fixed header
-                        behavior: 'smooth'
-                    });
-                }
+                });
             });
-        });
-        
-        // Scroll to top button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        if (scrollToTopBtn) {
+
+            const scrollToTopBtn = document.getElementById('scrollToTop');
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
-                    scrollToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+                    scrollToTopBtn.classList.add('opacity-100', 'translate-y-0');
+                    scrollToTopBtn.classList.remove('opacity-0', 'translate-y-4');
                 } else {
-                    scrollToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                    scrollToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+                    scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                    scrollToTopBtn.classList.add('opacity-0', 'translate-y-4');
                 }
             });
-            
             scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        }
-        
-        // Intersection Observer for scroll animations
-        const animateOnScroll = () => {
+
             const sections = document.querySelectorAll('section');
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
-            }, observerOptions);
-            
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        };
-        
-        // Initialize animations when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Animate in the first section immediately
-            const firstSection = document.querySelector('section');
-            if (firstSection) {
-                firstSection.classList.add('visible');
-            }
-            
-            // Set up intersection observer for other sections
-            animateOnScroll();
-            
-            // Add loaded class to body to enable transitions
-            document.body.classList.add('loaded');
-        });
-        
-        // Handle window resize
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            document.body.classList.add('resizing');
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                document.body.classList.remove('resizing');
-            }, 250);
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
